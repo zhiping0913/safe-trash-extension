@@ -1,0 +1,70 @@
+{
+	"name": "safe-trash",
+	"displayName": "Safe Trash",
+    "description": "Move workspace files into a configurable workspace-local trash directory instead of deleting them.",
+	"version": "0.4.0",
+	"publisher": "zhiping",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zhiping0913/safe-trash-extension.git"
+	},
+	"homepage": "https://github.com/zhiping0913/safe-trash-extension#readme",
+	"bugs": {
+		"url": "https://github.com/zhiping0913/safe-trash-extension/issues"
+	},
+	"engines": {
+		"vscode": "^1.90.0"
+	},
+	"extensionKind": [
+		"workspace"
+	],
+	"main": "./extension.js",
+	"files": [
+		"extension.js",
+		"README.md",
+		"changelog.md"
+	],
+	"activationEvents": [
+		"onCommand:safeTrash.moveToTrash"
+	],
+	"contributes": {
+		"configuration": {
+			"title": "Safe Trash",
+			"properties": {
+				"safeTrash.directory": {
+					"type": "string",
+					"default": ".trash",
+					"scope": "resource",
+					"markdownDescription": "Workspace-relative directory used by Safe Trash. Absolute paths and paths resolving outside the workspace are rejected."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "safeTrash.moveToTrash",
+				"title": "Move to Safe Trash"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "safeTrash.moveToTrash",
+					"group": "7_modification@20",
+					"when": "resourceScheme == file"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "safeTrash.moveToTrash",
+				"key": "delete",
+				"when": "filesExplorerFocus && !inputFocus"
+			},
+			{
+				"command": "safeTrash.moveToTrash",
+				"key": "shift+delete",
+				"when": "filesExplorerFocus && !inputFocus"
+			}
+		]
+	}
+}
