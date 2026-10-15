@@ -32,19 +32,21 @@ workspaces and virtual filesystem providers are not supported.
 
 ## Installation
 
-### Install a packaged VSIX
+### Install without Node.js or npm (recommended)
 
-1. If a release includes a `.vsix` asset, download it from this repository's
-   Releases page. Otherwise, build it from source using the instructions below.
+1. Download [`dist/safe-trash-0.4.0.vsix`](dist/safe-trash-0.4.0.vsix) from
+   this repository. On the GitHub file page, use **Download raw file**.
 2. In VS Code, open the Command Palette.
 3. Run **Extensions: Install from VSIX...**.
-4. Select the downloaded `.vsix` file.
+4. Select `safe-trash-0.4.0.vsix`.
 5. Reload the VS Code window when prompted.
+
+This installation method does not require Node.js, npm, or `npx`.
 
 For Remote SSH, WSL, or Dev Containers, open the remote window first and
 install the VSIX on the remote target when VS Code asks where to install it.
 
-### Build and install from source
+### Build and install from source (developers)
 
 Requirements: Node.js, npm, and VS Code 1.90 or newer.
 
