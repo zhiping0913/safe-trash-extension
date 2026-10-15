@@ -34,8 +34,8 @@ workspaces and virtual filesystem providers are not supported.
 
 ### Install a packaged VSIX
 
-1. Download the `.vsix` file from this repository's Releases page, or build it
-   from source using the instructions below.
+1. If a release includes a `.vsix` asset, download it from this repository's
+   Releases page. Otherwise, build it from source using the instructions below.
 2. In VS Code, open the Command Palette.
 3. Run **Extensions: Install from VSIX...**.
 4. Select the downloaded `.vsix` file.
